@@ -59,9 +59,6 @@ touch(Template(r"tpl1681122737251.png", record_pos=(-0.012, -0.691), resolution=
 
 
 # 验证设置等级权限上麦
-
-
-
 def take_seat():
     touch(Template(r"tpl1681122962268.png", record_pos=(-0.251, -0.971), resolution=(1080, 2400)))
     sleep(1.0)
@@ -77,11 +74,17 @@ def take_seat():
 
     touch(Template(r"tpl1681123166158.png", record_pos=(-0.355, 0.815), resolution=(1080, 2400)))
     sleep(1.0)
-    touch(Template(r"tpl1681123179038.png", record_pos=(-0.355, 0.766), resolution=(1080, 2400)))
+    
+    if exists(Template(r"tpl1681194725731.png", record_pos=(-0.331, 0.764), resolution=(1080, 2400))):
+
+        touch(Template(r"tpl1681123179038.png", record_pos=(-0.355, 0.766), resolution=(1080, 2400)))
+    else:
+        touch(Template(r"tpl1681194789870.png", record_pos=(-0.361, 0.641), resolution=(1080, 2400)))
+
     sleep(1.0)
     # 断言30级以上用户上麦设置成功
-    if exists(Template(r"tpl1681123191782.png", record_pos=(0.008, 0.81), resolution=(1080, 2400))):
-        log("30级以上用户可上麦")
+    if exists(Template(r"tpl1681123191782.png", record_pos=(0.008, 0.81), resolution=(1080, 2400)))or(Template(r"tpl1681194828055.png", record_pos=(-0.007, 0.812), resolution=(1080, 2400))):
+        log("30/20级以上用户可上麦")
 
     touch(Template(r"tpl1681123237320.png", record_pos=(-0.347, 0.815), resolution=(1080, 2400)))
     sleep(1.0)
@@ -98,6 +101,8 @@ def take_seat():
     # 断言任意用户可上麦设置成功
     if exists(Template(r"tpl1681123376250.png", record_pos=(-0.001, 0.818), resolution=(1080, 2400))):
         log("任意用户可上麦")
+    touch(Template(r"tpl1681194505658.png", record_pos=(-0.438, -0.987), resolution=(1080, 2400)))
+
 
         
 #如果当前房类型是多麦房，验证上麦权限设置
@@ -109,13 +114,13 @@ if exists(Template(r"tpl1681125608044.png", record_pos=(0.026, -0.968), resoluti
     touch(Template(r"tpl1681125084999.png", record_pos=(-0.323, -0.113), resolution=(1080, 2400)))
     sleep(1)
     take_seat()
-
-    
 else: 
     take_seat()
 
 
-    
+
+
+
 
 
 
