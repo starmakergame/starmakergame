@@ -118,8 +118,3 @@ if __name__ == "__main__":
     for device in devices:
         test = Air_Case_Handler(device)
         test.run_air(air_path, device)
-
-    # 发送测试报告到邮箱
-    email = send_email()
-    new_report = email.new_report(report_path)
-    email.send_mail(new_report)

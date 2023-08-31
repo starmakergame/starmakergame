@@ -1,7 +1,7 @@
 # coding = utf-8
 import os
 # ---------------------------------基础类型设置-------------------------------------------
-deviceType = "app"                                                             # 设备类别：app、win和web
+deviceType = "app"                                                             # 设备类别
 devices = ['R58N51LLHSV']                            		# 设备信息，只有当deviceType为app是有效，decices 在Airtest运行过程中可以在控制台看到
 root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))         # 工程根目录
 air_path = os.path.join(root_path, 'air')                                        # 脚本目录（由根目录和air拼接：root/air）
